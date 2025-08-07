@@ -9,14 +9,14 @@
     <header><h1>Sending an anonymous complaint</h1></header>
 
     <main>
-      <form action="">
-        <select name="Complaint type">
+      <form  method="post" action="http://localhost:3000/idf/complaint">
+        <select name="category">
           <option value="food">Food</option>
           <option value="euipment">Equipment</option>
           <option value="commands">Commands</option>
           <option value="other">Other</option>
         </select>
-        <textarea name="Complaint type" placeholder="enter complaint"
+        <textarea name="complaint" placeholder="enter complaint"
         ></textarea>
         <button id="btcomplaint" type="submit">send complaint</button>
       </form>

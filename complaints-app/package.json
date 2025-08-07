@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/yoel-cmd/Anonymous-complaints#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.53.1",
     "express": "^5.1.0"
   }
 }

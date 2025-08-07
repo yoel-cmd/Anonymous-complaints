@@ -1,4 +1,5 @@
 import express from "express";
+import { createComplaint, getAllcomplaint } from "../DB/connect.js";
 
 export const router = express.Router();
 
@@ -14,14 +15,20 @@ export function CheckPassword(req, res, next) {
     return res.status(426).json({ error: "problem" });
   }
 }
-
-router.post("/admin", (req, res) => {
-  console.log(req.body);
-  res.send("hi from admin");
+router.post("/admin", async (req, res) => {
+  try {
+    const val = await getAllcomplaint();
+    console.log(val);
+    res.json(val);
+  } catch (error) {}
 });
 
-router.post("/complaint", (req, res) => {
-  console.log(req.body);
-  console.log("hi from complaint");
-  res.send("hi from complaint");
+router.post("/complaint", async (req, res) => {
+  try {
+    await createComplaint(req.body);
+    res.send("insert complaint");
+    console.log("insert complaint");
+  } catch (error) {
+    console.log(error);
+  }
 });
