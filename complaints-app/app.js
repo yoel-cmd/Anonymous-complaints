@@ -8,7 +8,8 @@ app.use(express.static("public"))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/admin',CheckPassword)
+app.use('/idf/admin',CheckPassword)
+
 app.use("/idf", router);
 
 app.listen(3000, () => console.log("listen.."));
