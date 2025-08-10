@@ -19,7 +19,7 @@ router.post("/admin", async (req, res) => {
   try {
     const val = await getAllcomplaint();
     console.log(val);
-    res.json(val);
+    res.send(`<pre>${JSON.stringify(val, null, 2)}</pre>`);
   } catch (error) {}
 });
 
